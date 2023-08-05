@@ -16,15 +16,17 @@
 
  };
 
- void preorder(Node *root){
+ void inOrder(Node *root){
 
      if(root== NULL){
         return;
      }
 
+
+  inOrder(root->left);
   cout<<root->value<<" ";
-  preorder(root->left);
-  preorder(root->right);
+  inOrder(root->right);
+
  }
 
 
@@ -52,7 +54,7 @@
    d->left = f;
    d->right = g;
 
-   preorder(root);
+   inOrder(root);
 
 
  return 0;

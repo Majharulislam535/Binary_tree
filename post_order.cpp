@@ -16,15 +16,16 @@
 
  };
 
- void preorder(Node *root){
+ void postOrder(Node *root){
 
      if(root== NULL){
         return;
      }
 
+
+  postOrder(root->left);
+  postOrder(root->right);
   cout<<root->value<<" ";
-  preorder(root->left);
-  preorder(root->right);
  }
 
 
@@ -52,7 +53,7 @@
    d->left = f;
    d->right = g;
 
-   preorder(root);
+   postOrder(root);
 
 
  return 0;
